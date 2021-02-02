@@ -21,20 +21,20 @@ public class BoardController {
 	//http://127.0.0.1/board?i=3
 	//select count(*) from board;
 	@PostMapping("board")
-	public String m1(Long i) {
-		Board save =  new Board(i, "spring boot", "권희성", "으갸갸갹");
+	public Board m1(Long i) {
+		Board save =  new Board(i, "spring boot", "권희성", "으갸갸갹"); //insert into board (content, title, writer, seq) values (?, ?, ?, ?)
 		dao.save(save);
-		return "게시판 저장 성공";
+		return save;
 	}
 	
-	//http://ip:port/boarddata?id=1
+	//http://127.0.0.1/boarddata?id=1
 	@GetMapping("boarddata")
 	public Board m2(Long id) {
-		System.out.println("---------------" + id);
-		Optional<Board> cn = dao.findById(id);
-		
-		System.out.println("---------------" + cn.get());
-		return cn.get();
+//		System.out.println("---------------" + id);
+//		Optional<Board> cn = dao.findById(id);
+//		
+//		System.out.println("---------------" + cn.get());
+		return  dao.findById(id).orElse(null);
 	}
 	//json 포멧으로 응답
 	//http://127.0.0.1/boardall
