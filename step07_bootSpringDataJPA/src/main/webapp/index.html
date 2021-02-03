@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<button onclick="ajaxF()">클릭시 비동기로 존재하는 seq=1, writer=권희성 정보
+		출력</button>
+	<br><hr><br>
+	<div id="viewData"></div>
+	<script> 
+	function ajaxF(){
+	   axios.get("board-sw",{
+		   params : {
+			   s : 1,
+			   w : "권희성"
+		   }
+	   })
+	  .then(function (response) { 
+		console.log("성공");
+		document.getElementById("viewData").innerText = JSON.stringify(response.data);
+	  })
+	  .catch(function (error) { 
+	    console.log(error);
+	  })
+	  .then(function () {
+	    // always executed
+	  });
+	} 
+   </script>
+</body>
+</html>

@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>playdata</groupId>
-	<artifactId>step07_bootSpringDataJPA</artifactId>
+	<artifactId>step08_myArt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>step07_bootSpringDataJPA</name>
+	<name>step08_myArt</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -60,19 +60,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- JSP -->
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
-
-		<!-- jstl for jsp -->
-	<!-- 	<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency> -->
-	</dependencies> 
+	</dependencies>
 
 	<build>
 		<plugins>

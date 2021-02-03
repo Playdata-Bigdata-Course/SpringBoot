@@ -18,6 +18,9 @@ public interface BoardRepository extends CrudRepository<Board, Long>{
 	//select * from board where title like '%?%'
 	List<Board> findBoardByTitleContaining(String titleData);
 	
+	//? 호출하는 Test 코드는 직접 구현
+	//select * from board where seq=? and writer=?
+	Board findBoardBySeqAndWriter(Long s, String w);
 }
 /*	사용자 정의 검색 메소드 추가 구현 가능
  * 1. 네이밍 rule
