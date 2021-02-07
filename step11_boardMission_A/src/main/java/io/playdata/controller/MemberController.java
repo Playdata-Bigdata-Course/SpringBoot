@@ -58,7 +58,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/getBoard")
-	public String getBoard(@ModelAttribute("member") Member member, Board board, Model model) {
+	public String getember(@ModelAttribute("member") Member member, Board board, Model model) {
 		if (member.getId() == null) {
 			return "redirect:login";
 		}
