@@ -3,12 +3,14 @@ package io.playdata.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.playdata.model.domain.Board;
-
+@CrossOrigin
 @RestController
 public class Controller {
 	public Controller() {
@@ -53,6 +55,13 @@ public class Controller {
 	@GetMapping("boarduri/{id}")
 	public String m5(@PathVariable String id) {
 		return "으게게게겍" + id;
+	}
+	
+	@CrossOrigin
+	@GetMapping("test")
+	public String m11(@RequestParam String code) {
+		System.out.println(code);
+		return code;
 	}
 	
 }
